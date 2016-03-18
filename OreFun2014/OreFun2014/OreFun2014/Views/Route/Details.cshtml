@@ -1,0 +1,50 @@
+﻿@model OreFun2014.Models.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RouteNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RouteNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Station.StationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Station.StationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RouteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

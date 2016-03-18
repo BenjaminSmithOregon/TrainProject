@@ -1,0 +1,42 @@
+﻿@model OreFun2014.Models.Train
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Train</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfCars)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfCars)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrainID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

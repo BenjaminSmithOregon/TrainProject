@@ -1,0 +1,85 @@
+﻿@model OreFun2014.Models.Passenger
+@*@model OreFun2014.Models.TicketIndexData*@
+@*@model IEnumerable<OreFun2014.Models.Ticket>*@
+
+@*@{
+    ViewBag.Title = "PassReport";
+}
+
+<h2>Ticket Report</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+         <dt>
+            First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Baggage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baggage)
+        </dd>*@
+        @*<dd>
+    <h3>Tickets purchased</h3>
+    <table class="table">
+        <tr>
+            <th>Train ID</th>
+            <th>Travel Date</th>
+            <th>Departure Staton</th>
+            <th>Destination Station</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+        </tr>
+
+        @foreach (var item in Model.Tickets)
+        {
+            string selectedRow = "";
+            if (item.TicketID == ViewBag.TicketID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                @*<td>
+                    @item.Route.Train.TrainID
+                </td>*@
+                @*<td>
+                    @item.RouteDate
+                </td>*@
+                @*<td>
+                    @item.Route.Station.StationName
+                </td>
+                <td>
+                    @item.Route.Station.StationName
+                </td>*@
+                @*<td>
+                    @item.Route.DepartTime
+                </td>
+                <td>
+                    @item.Route.ArrivalTime
+                </td>
+            </tr>
+        }
+    </table>
+    @*}*@
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>*@*@

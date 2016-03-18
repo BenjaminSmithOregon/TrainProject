@@ -1,0 +1,50 @@
+﻿@model OreFun2014.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.FullName)
+        </dd>
+
+        <dt>
+            Route Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Route.RouteID)
+        </dd>
+
+        <dt>
+            Travel Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RouteDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatAssignment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatAssignment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

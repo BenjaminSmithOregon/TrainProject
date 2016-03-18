@@ -1,0 +1,66 @@
+﻿@model OreFun2014.ViewModels.TicketIndexData
+
+@{
+    ViewBag.Title = "Tickets";
+}
+
+<h2>Tickets</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Last Name
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Route Number
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.RouteDate)*@
+            Travel Date
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SeatAssignment)*@
+            Seat Assignment
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Tickets) {
+            string selectedRow = "";
+        if (item.TicketID == ViewBag.TicketID)
+        {
+            selectedRow = "success";
+        }
+    <tr class="@selectedRow">
+        <td>
+            @Html.DisplayFor(modelItem => item.Passenger.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passenger.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Route.RouteID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RouteDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatAssignment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TicketID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TicketID })
+            @*@Html.ActionLink("Report", "TicketReport", new { id = item.TicketID })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,86 @@
+﻿@model OreFun2014.Models.Passenger
+
+@{
+    ViewBag.Title = "PassReport";
+}
+
+<h2>Passenger Report</h2>
+
+<div>
+    <h4>Passenger</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Baggage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baggage)
+        </dd>
+
+    </dl>
+</div>
+
+@if (Model.Tickets != null)
+{
+    <h3>Tickets purchased</h3>
+    <table class="table">
+        <tr>
+            <th>Route Number</th>
+            <th>Route Date</th>
+            <th>Seat Assignment</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+        </tr>
+
+        @foreach (var item in Model.Tickets)
+        {
+            string selectedRow = "";
+            if (item.TicketID == ViewBag.TicketID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @item.Route.RouteNumber
+                </td>
+                <td>
+                    <time>
+                        @item.RouteDate.Date
+                    </time>
+                </td>
+                <td>
+                    @item.SeatAssignment
+                </td>
+                <td>
+                    @item.Route.DepartTime
+                </td>
+                <td>
+                    @item.Route.ArrivalTime
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

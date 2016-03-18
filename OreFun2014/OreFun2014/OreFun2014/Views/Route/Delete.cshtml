@@ -1,0 +1,56 @@
+﻿@model OreFun2014.Models.Route
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Station.StationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Station.StationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
