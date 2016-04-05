@@ -10,5 +10,5 @@ In order for this project to work correctly on your local machine,
     and then open the OreFun2014 VS solution (OreFun2014.sln)
   3. This will open up the solution in Visual Studio
   4. Then build and run the solution by pressing ctrl + F5
-  5.The project should open up in your default browser
+  5. The project should open up in your default browser
   6. Now have fun!
