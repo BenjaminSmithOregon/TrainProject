@@ -1,8 +1,8 @@
 This is the readme file for the Trains project.
 
 In order for this project to work correctly on your local machine, 
-  you need to have a workign copy of MS Visual Studio 2013 or above
-  along with a working copy of MSSQL 2008 or above.
+  you need to have a working copy of MS Visual Studio 2013 or above
+  along with a working copy of MS SQL Server 2008 or above.
   
   1. Start by forking the repo
   2. Then after you you have the files, open up the OreFun2014 folder
